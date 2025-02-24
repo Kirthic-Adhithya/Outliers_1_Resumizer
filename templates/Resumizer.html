@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Resume Enhancer</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='resumizer.css') }}"
+    />
+    <script
+      defer
+      src="{{ url_for('static', filename='resumizer.js') }}"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>AI-Powered Resume Enhancer</h1>
+      <p>
+        Upload your resume, and our AI will optimize it for better job matching!
+      </p>
+      <div class="upload-section">
+        <label for="resume-file" class="custom-file-upload"
+          >Choose PDF File</label
+        >
+        <input
+          type="file"
+          id="resume-file"
+          accept=".pdf"
+          onchange="displayFileName(this)"
+        />
+        <span id="selected-file-name" class="file-name"></span>
+        <button onclick="uploadResume()">Upload & Enhance</button>
+      </div>
+      <div class="results-section">
+        <h2>Enhanced Resume:</h2>
+        <p id="output"></p>
+        <a id="download-link" href="#" style="display: none">
+          <button>Download Enhanced Resume</button>
+        </a>
+      </div>
+      <div id="analysis-section" style="display: none">
+        <h2>Job Description Analysis:</h2>
+        <textarea
+          id="job-description"
+          placeholder="Paste the job description here to analyze skill match and get course recommendations..."
+          rows="6"
+        ></textarea>
+        <button onclick="analyzeJobMatch()">
+          Analyze Skills & Get Recommendations
+        </button>
+        <div class="analysis-results">
+          <h3>Analysis Results:</h3>
+          <div id="analysis-output" class="analysis-content"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
