@@ -1,7 +1,7 @@
 import groq
 
 # Replace with your actual Groq API key
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "GROK API key here."
 client = groq.Groq(api_key=GROQ_API_KEY)
 
 try:
