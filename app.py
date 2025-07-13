@@ -62,7 +62,7 @@ os.makedirs(OUTPUT_FOLDER, exist_ok=True)
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 # Set Groq API Key
-GROQ_API_KEY = os.getenv("GROQ_API_KEY", "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")
+GROQ_API_KEY = os.getenv("GROQ_API_KEY", "Your GROK API key here.")
 client = groq.Groq(api_key=GROQ_API_KEY)
 
 def extract_text_from_pdf(pdf_path):
